@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awq-lo-0kq">
+                                <rect key="frame" x="156" y="617" width="62" height="30"/>
+                                <state key="normal" title="录制视频"/>
+                                <connections>
+                                    <action selector="startVideoRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HA6-hc-3JU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lbr-4q-eNg">
+                                <rect key="frame" x="67" y="100" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="b25-A8-giP"/>
+                                    <constraint firstAttribute="width" constant="240" id="mCr-6I-ejT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCw-mb-MZD">
+                                <rect key="frame" x="167" y="155" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="M3D-UC-pFu"/>
+                                    <constraint firstAttribute="width" constant="40" id="kFI-NX-7lM"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="play"/>
+                                <connections>
+                                    <action selector="playBtnOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eqd-Ma-t4h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWN-7P-03x" userLabel="视频存放地址">
+                                <rect key="frame" x="36" y="258" width="303" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="awq-lo-0kq" secondAttribute="bottom" constant="20" id="07E-gJ-S92"/>
+                            <constraint firstItem="lbr-4q-eNg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3j4-ou-stG"/>
+                            <constraint firstItem="lbr-4q-eNg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="Nxp-Lu-Pok"/>
+                            <constraint firstItem="GCw-mb-MZD" firstAttribute="centerY" secondItem="lbr-4q-eNg" secondAttribute="centerY" id="Rcf-5K-OCL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xWN-7P-03x" secondAttribute="trailing" constant="20" id="dps-c5-X6Q"/>
+                            <constraint firstItem="xWN-7P-03x" firstAttribute="top" secondItem="lbr-4q-eNg" secondAttribute="bottom" constant="8" id="fUk-Hb-hYQ"/>
+                            <constraint firstItem="awq-lo-0kq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fmz-lW-yPE"/>
+                            <constraint firstItem="xWN-7P-03x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="kMS-Up-qqG"/>
+                            <constraint firstItem="GCw-mb-MZD" firstAttribute="centerX" secondItem="lbr-4q-eNg" secondAttribute="centerX" id="rjF-Xh-Ewa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coverImage" destination="lbr-4q-eNg" id="jC7-ot-AZc"/>
+                        <outlet property="playBtn" destination="GCw-mb-MZD" id="gkq-36-y3F"/>
+                        <outlet property="videoPath" destination="xWN-7P-03x" id="Gxv-qG-JgG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play" width="64" height="64"/>
+    </resources>
+</document>
