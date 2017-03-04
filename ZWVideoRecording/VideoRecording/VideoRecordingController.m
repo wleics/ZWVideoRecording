@@ -82,7 +82,7 @@
 }
 
 -(void)dealloc{
-    NSLog(@"dealloc😎");
+    
 }
 
 #pragma mark - Init UI
